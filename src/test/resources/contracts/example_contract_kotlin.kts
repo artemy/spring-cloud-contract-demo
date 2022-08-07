@@ -12,7 +12,8 @@ contract {
         }
         body = body(
             "foo" to value(consumer(optional(anyOf("FOO", "BAR"))), producer("FOO")),
-            "bar" to value(consumer(optional(nonBlank)), producer("FOO"))
+            "bar" to value(consumer(optional(anyNonBlankString)), producer("FOO")),
+            "baz" to value(consumer(optional(nonBlank)), producer("BAZ"))
         )
     }
     response {
@@ -22,7 +23,8 @@ contract {
         }
         body = body(
             "foo" to value(consumer("FOO"), producer(optional(anyOf("FOO", "BAR")))),
-            "bar" to value(consumer("FOO"), producer(optional(nonBlank)))
+            "bar" to value(consumer("FOO"), producer(optional(anyNonBlankString))),
+            "baz" to value(consumer("BAZ"), producer(optional(nonBlank)))
         )
     }
 }

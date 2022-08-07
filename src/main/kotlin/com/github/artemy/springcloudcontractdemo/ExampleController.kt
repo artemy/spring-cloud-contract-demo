@@ -11,5 +11,5 @@ class ExampleController {
 
     @GetMapping
     fun exampleEndpoint(@RequestBody fooRequest: FooRequest): FooResponse =
-        FooResponse(fooRequest.foo, fooRequest.bar)
+        FooResponse(fooRequest.foo, fooRequest.bar, fooRequest.baz)
 }

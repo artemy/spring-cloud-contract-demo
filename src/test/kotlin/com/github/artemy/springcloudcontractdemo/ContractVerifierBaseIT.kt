@@ -11,7 +11,7 @@ import org.springframework.web.context.WebApplicationContext
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 class ContractVerifierBaseIT {
     @Autowired
-    var context: WebApplicationContext? = null
+    lateinit var context: WebApplicationContext
 
     @BeforeEach
     fun setup() {
